@@ -66,8 +66,11 @@ class Settings(BaseSettings):
         if self.USE_SUPABASE and self.SUPABASE_DB_URL:
             return self.SUPABASE_DB_URL
         else:
+            import urllib.parse
+            # Encoder le mot de passe pour éviter les problèmes d'encodage
+            encoded_password = urllib.parse.quote_plus(self.POSTGRES_LOCAL_PASSWORD)
             return (
-                f"postgresql://{self.POSTGRES_LOCAL_USER}:{self.POSTGRES_LOCAL_PASSWORD}"
+                f"postgresql://{self.POSTGRES_LOCAL_USER}:{encoded_password}"
                 f"@{self.POSTGRES_LOCAL_HOST}:{self.POSTGRES_LOCAL_PORT}/{self.POSTGRES_LOCAL_DB}"
             )
     

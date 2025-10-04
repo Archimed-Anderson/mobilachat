@@ -7,7 +7,9 @@ from sqlalchemy.orm import sessionmaker
 from .config import settings
 
 # Créer l'engine de base de données avec encodage UTF-8
+import urllib.parse
 database_url = str(settings.DATABASE_URL)
+# Encoder le mot de passe pour éviter les problèmes d'encodage
 if "?" not in database_url:
     database_url += "?client_encoding=utf8"
 
