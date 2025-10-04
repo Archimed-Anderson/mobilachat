@@ -1,0 +1,156 @@
+version: '3.8'
+
+services:
+  # Base de données PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: chatbot-postgres
+    environment:
+      POSTGRES_DB: chatbot_free_mobile
+      POSTGRES_USER: chatbot_user
+      POSTGRES_PASSWORD: SecurePassword123!
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - chatbot-network
+    restart: unless-stopped
+
+  # Cache Redis
+  redis:
+    image: redis:7-alpine
+    container_name: chatbot-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - chatbot-network
+    restart: unless-stopped
+
+  # Backend API
+  backend:
+    build:
+      context: ../../apps/backend
+      dockerfile: Dockerfile
+    container_name: chatbot-backend
+    environment:
+      - POSTGRES_LOCAL_HOST=postgres
+      - POSTGRES_LOCAL_USER=chatbot_user
+      - POSTGRES_LOCAL_PASSWORD=Adan@20102016
+      - POSTGRES_LOCAL_DB=chatbot_free_mobile
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - AI_ENGINE_URL=http://ai-engine:8001
+      - FRONTEND_URL=http://localhost:8501
+      - SUPABASE_URL=https://dgyjxlckgzuluxgnwnnz.supabase.co
+      - SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRneWp4bGNrZ3p1bHV4Z253bm56Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk1NzkwNDksImV4cCI6MjA3NTE1NTA0OX0.Me_NIxx8rZR7459G5h2E2aWeoUipRo9gFYeRnuRvbG4
+      - SUPABASE_SERVICE_ROLE_KEY=sb_secret_opVHouTwBbv1mF8kq3PM6w_YSMsMDiS
+      - SUPABASE_DB_URL=postgresql://postgres:Adan@20102016@db.dgyjxlckgzuluxgnwnnz.supabase.co:5432/postgres
+      - SECRET_KEY=free-mobile-chatbot-super-secret-key-2024-production-ready-32-chars-min
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - chatbot-network
+    restart: unless-stopped
+    volumes:
+      - ../../data:/app/data
+
+  # Moteur IA
+  ai-engine:
+    build:
+      context: ../../apps/ai-engine
+      dockerfile: Dockerfile
+    container_name: chatbot-ai-engine
+    environment:
+      - VECTOR_STORE_PATH=/app/data/vector_store
+      - LLM_MODEL_NAME=microsoft/DialoGPT-medium
+      - EMBEDDING_MODEL=sentence-transformers/all-MiniLM-L6-v2
+    ports:
+      - "8001:8001"
+    networks:
+      - chatbot-network
+    restart: unless-stopped
+    volumes:
+      - ../../data:/app/data
+    # Optionnel: utiliser GPU si disponible
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+
+  # Frontend Streamlit
+  frontend:
+    build:
+      context: ../../apps/frontend
+      dockerfile: Dockerfile
+    container_name: chatbot-frontend
+    environment:
+      - BACKEND_API_URL=http://backend:8000
+      - AI_ENGINE_URL=http://ai-engine:8001
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+      - ai-engine
+    networks:
+      - chatbot-network
+    restart: unless-stopped
+
+  # Surveillance Mastodon
+  social-monitor:
+    build:
+      context: ../../apps/social-monitor
+      dockerfile: Dockerfile
+    container_name: chatbot-social-monitor
+    environment:
+      - BACKEND_API_URL=http://backend:8000
+      - AI_ENGINE_URL=http://ai-engine:8001
+      - MASTODON_INSTANCE_URL=https://mastodon.social
+      - MASTODON_CLIENT_ID=_KU2v_HHfbryK3G4OHEZFemWRaFXwSb2W9dvraZ7m54
+      - MASTODON_CLIENT_SECRET=ItxCYDtILkNdMcAEFaln4hBUWa-bYrOibIWxqlrBh5w
+      - MASTODON_ACCESS_TOKEN=QKoEtaWSFuZvPrxK4z7381x1rrS_7IFAfQHx_P1Bt4Y
+    ports:
+      - "8002:8002"
+    depends_on:
+      - backend
+      - ai-engine
+    networks:
+      - chatbot-network
+    restart: unless-stopped
+
+  # PgAdmin (optionnel)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: chatbot-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@chatbot.local
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    networks:
+      - chatbot-network
+    restart: unless-stopped
+    profiles:
+      - tools
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  chatbot-network:
+    driver: bridge
+

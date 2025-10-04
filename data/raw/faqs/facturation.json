@@ -1,0 +1,38 @@
+{
+  "facturation": [
+    {
+      "question": "Comment consulter ma facture ?",
+      "answer": "Vous pouvez consulter votre facture depuis votre espace client Free Mobile sur mobile.free.fr/moncompte. Connectez-vous avec votre numéro de téléphone et votre mot de passe, puis cliquez sur 'Factures' dans le menu."
+    },
+    {
+      "question": "Quand est-ce que ma facture est prélevée ?",
+      "answer": "Votre forfait est prélevé le jour de votre souscription, puis chaque mois à la même date. Par exemple, si vous vous êtes abonné le 15 du mois, votre forfait sera prélevé le 15 de chaque mois."
+    },
+    {
+      "question": "Que faire si je n'ai pas reçu ma facture ?",
+      "answer": "Vérifiez d'abord dans vos spams. Si vous ne trouvez pas votre facture, connectez-vous à votre espace client pour la télécharger. Vous pouvez aussi nous contacter au 3244 depuis votre mobile Free."
+    },
+    {
+      "question": "Comment changer ma date de prélèvement ?",
+      "answer": "La date de prélèvement correspond à votre date d'engagement. Pour la modifier, vous devez résilier votre forfait actuel et souscrire un nouveau forfait à la date souhaitée."
+    },
+    {
+      "question": "Que se passe-t-il si je dépense plus que mon forfait ?",
+      "answer": "Si vous dépassez votre forfait, des frais supplémentaires s'appliquent : 0,05€ par SMS supplémentaire, 0,05€ par minute d'appel supplémentaire, et 0,05€ par Mo de data supplémentaire. Ces frais apparaîtront sur votre prochaine facture."
+    },
+    {
+      "question": "Comment payer ma facture ?",
+      "answer": "Le paiement se fait automatiquement par prélèvement bancaire. Vous pouvez modifier vos coordonnées bancaires depuis votre espace client. Le paiement par carte bancaire n'est pas possible pour les forfaits Free Mobile."
+    },
+    {
+      "question": "Puis-je avoir une facture papier ?",
+      "answer": "Non, Free Mobile ne propose que des factures électroniques. Vous pouvez les télécharger et les imprimer depuis votre espace client si vous souhaitez une version papier."
+    },
+    {
+      "question": "Que signifie 'TVA non applicable' sur ma facture ?",
+      "answer": "Cela signifie que Free Mobile est exonéré de TVA sur les services de télécommunications, conformément à la réglementation française. C'est normal et légal."
+    }
+  ]
+}
+
+

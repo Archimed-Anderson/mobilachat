@@ -1,0 +1,38 @@
+{
+  "technique": [
+    {
+      "question": "Mon téléphone ne capte pas le réseau 4G",
+      "answer": "Vérifiez d'abord que votre téléphone est compatible 4G et que la 4G est activée dans les paramètres. Redémarrez votre téléphone, vérifiez que vous êtes dans une zone couverte par Free Mobile, et assurez-vous que votre carte SIM est bien insérée."
+    },
+    {
+      "question": "Je n'arrive pas à me connecter à internet",
+      "answer": "Vérifiez que les données mobiles sont activées dans les paramètres de votre téléphone. Redémarrez votre appareil, vérifiez que vous avez du crédit data restant, et assurez-vous d'être dans une zone couverte."
+    },
+    {
+      "question": "Mon téléphone ne reçoit pas les SMS",
+      "answer": "Vérifiez que votre téléphone est allumé et que la carte SIM est bien insérée. Redémarrez votre appareil, vérifiez que vous avez du crédit SMS restant, et assurez-vous que le centre de messages n'est pas plein."
+    },
+    {
+      "question": "Je n'arrive pas à passer d'appels",
+      "answer": "Vérifiez que vous avez du crédit d'appels restant, que votre téléphone est allumé, et que la carte SIM est bien insérée. Redémarrez votre appareil et vérifiez que vous êtes dans une zone couverte par Free Mobile."
+    },
+    {
+      "question": "Comment activer le partage de connexion (hotspot) ?",
+      "answer": "Allez dans les paramètres de votre téléphone, puis 'Connexions' ou 'Réseau et Internet', et activez le 'Point d'accès mobile' ou 'Partage de connexion'. Vous pouvez définir un nom et un mot de passe pour votre hotspot."
+    },
+    {
+      "question": "Mon téléphone ne se connecte pas au WiFi",
+      "answer": "Vérifiez que le WiFi est activé, que vous êtes à portée du réseau, et que vous avez saisi le bon mot de passe. Redémarrez votre téléphone et le routeur WiFi. Oubliez le réseau et reconnectez-vous."
+    },
+    {
+      "question": "Que faire si ma carte SIM ne fonctionne plus ?",
+      "answer": "Vérifiez que la carte SIM est bien insérée et propre. Redémarrez votre téléphone. Si le problème persiste, contactez le service client Free Mobile au 3244 pour obtenir une nouvelle carte SIM."
+    },
+    {
+      "question": "Comment configurer les paramètres APN ?",
+      "answer": "Allez dans les paramètres de votre téléphone, puis 'Réseau mobile' ou 'Connexions', et configurez l'APN avec les paramètres suivants : Nom : 'Free Mobile', APN : 'free', Nom d'utilisateur et mot de passe : laissez vide."
+    }
+  ]
+}
+
+

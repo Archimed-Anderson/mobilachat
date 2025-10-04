@@ -1,0 +1,38 @@
+{
+  "forfait": [
+    {
+      "question": "Quels sont les forfaits Free Mobile disponibles ?",
+      "answer": "Free Mobile propose plusieurs forfaits : le forfait 2€ (2h d'appels, SMS illimités, 50Mo), le forfait 5€ (appels illimités, SMS illimités, 1Go), le forfait 15€ (appels illimités, SMS illimités, 100Go), et le forfait 20€ (appels illimités, SMS illimités, 200Go)."
+    },
+    {
+      "question": "Puis-je changer de forfait ?",
+      "answer": "Oui, vous pouvez changer de forfait depuis votre espace client Free Mobile. Le changement prend effet le jour de votre prochaine facture. Vous ne pouvez pas rétrograder vers un forfait moins cher avant la fin de votre engagement."
+    },
+    {
+      "question": "Y a-t-il un engagement avec les forfaits Free Mobile ?",
+      "answer": "Non, tous les forfaits Free Mobile sont sans engagement. Vous pouvez résilier à tout moment sans frais, sauf pour les forfaits avec téléphone qui peuvent avoir un engagement de 12 ou 24 mois."
+    },
+    {
+      "question": "Que se passe-t-il si je dépense tout mon forfait data ?",
+      "answer": "Une fois votre forfait data épuisé, vous pouvez continuer à surfer mais à vitesse réduite (128 kbps). Vous pouvez aussi acheter des options data supplémentaires depuis votre espace client."
+    },
+    {
+      "question": "Puis-je suspendre temporairement mon forfait ?",
+      "answer": "Non, Free Mobile ne propose pas de suspension temporaire de forfait. Vous pouvez résilier et souscrire un nouveau forfait plus tard, mais cela nécessite de repasser par la procédure de souscription."
+    },
+    {
+      "question": "Comment fonctionne le roaming en Europe ?",
+      "answer": "Avec les forfaits Free Mobile, vous pouvez utiliser votre forfait dans l'Union Européenne sans frais supplémentaires, dans les limites de votre forfait. Au-delà, des frais de roaming s'appliquent."
+    },
+    {
+      "question": "Puis-je avoir plusieurs lignes avec le même compte ?",
+      "answer": "Oui, vous pouvez avoir jusqu'à 4 lignes avec le même compte Free Mobile. Chaque ligne a son propre numéro et son propre forfait, mais elles sont gérées depuis le même espace client."
+    },
+    {
+      "question": "Que se passe-t-il si je ne paie pas ma facture ?",
+      "answer": "Si vous ne payez pas votre facture, votre ligne sera suspendue après 15 jours. Si le non-paiement persiste, votre ligne sera résiliée après 30 jours. Vous devrez régulariser votre situation pour réactiver votre ligne."
+    }
+  ]
+}
+
+
