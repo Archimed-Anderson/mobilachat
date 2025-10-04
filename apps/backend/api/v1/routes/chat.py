@@ -4,11 +4,11 @@ Routes API pour le chat
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
-from apps.backend.core.database import get_db
-from apps.backend.core.redis_client import redis_client
-from apps.backend.core.security import check_rate_limit
-from apps.backend.schemas.chat import ChatRequest, ChatResponse, ConversationResponse
-from apps.backend.services.chat_service import ChatService
+from ...core.database import get_db
+from ...core.redis_client import redis_client
+from ...core.security import check_rate_limit
+from ...schemas.chat import ChatRequest, ChatResponse, ConversationResponse
+from ...services.chat_service import ChatService
 import uuid
 
 router = APIRouter()

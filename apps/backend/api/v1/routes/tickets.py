@@ -4,10 +4,10 @@ Routes API pour les tickets
 from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.orm import Session
 from typing import Optional
-from apps.backend.core.database import get_db
-from apps.backend.core.security import require_auth
-from apps.backend.schemas.ticket import TicketCreate, TicketUpdate, TicketResponse, TicketListResponse
-from apps.backend.services.ticket_service import TicketService
+from ...core.database import get_db
+from ...core.security import require_auth
+from ...schemas.ticket import TicketCreate, TicketUpdate, TicketResponse, TicketListResponse
+from ...services.ticket_service import TicketService
 import uuid
 
 router = APIRouter()

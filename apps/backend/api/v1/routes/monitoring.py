@@ -7,10 +7,10 @@ from typing import Optional, List
 from datetime import datetime, timedelta
 import logging
 
-from apps.backend.core.database import get_db
-from apps.backend.services.advanced_analytics_service import AdvancedAnalyticsService
-from apps.backend.services.realtime_monitoring_service import RealtimeMonitoringService
-from apps.backend.schemas.analytics import AnalyticsResponse
+from ...core.database import get_db
+from ...services.advanced_analytics_service import AdvancedAnalyticsService
+from ...services.realtime_monitoring_service import RealtimeMonitoringService
+from ...schemas.analytics import AnalyticsResponse
 
 logger = logging.getLogger(__name__)
 

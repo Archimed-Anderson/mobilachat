@@ -15,7 +15,7 @@ def create_env_file():
     """Crée le fichier .env avec les credentials fournis"""
     env_content = """# Base de données PostgreSQL (utiliser Supabase)
 USE_SUPABASE=true
-SUPABASE_DB_URL=postgresql://postgres.Adan%4020102016@db.dgyjxlckgzuluxgnwnnz.supabase.co:5432/postgres
+SUPABASE_DB_URL=postgresql://postgres:Adan%4020102016@db.dgyjxlckgzuluxgnwnnz.supabase.co:5432/postgres
 
 # Supabase
 SUPABASE_URL=https://dgyjxlckgzuluxgnwnnz.supabase.co

@@ -4,10 +4,10 @@ Routes API pour les analytics
 from fastapi import APIRouter, Depends, HTTPException, status, Query
 from sqlalchemy.orm import Session
 from datetime import datetime, timedelta
-from apps.backend.core.database import get_db
-from apps.backend.core.security import require_auth
-from apps.backend.schemas.analytics import AnalyticsResponse
-from apps.backend.services.analytics_service import AnalyticsService
+from ...core.database import get_db
+from ...core.security import require_auth
+from ...schemas.analytics import AnalyticsResponse
+from ...services.analytics_service import AnalyticsService
 
 router = APIRouter()
 
